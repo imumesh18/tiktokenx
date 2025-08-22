@@ -37,7 +37,7 @@ sha2 = { version = "0.10", optional = true }
 criterion = { version = "0.5", features = ["html_reports"] }
 tokio-test = "0.4"
 # For memory profiling
-peak_alloc = "0.2"
+peak_alloc = "0.3"
 
 [[bench]]
 name = "encoding_benchmark"
