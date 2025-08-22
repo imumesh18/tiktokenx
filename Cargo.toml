@@ -1,0 +1,51 @@
+[package]
+name = "tiktoken_rust"
+version = "0.0.0"
+edition = "2021"
+authors = ["Umesh Yadav <git@umesh.dev>"]
+description = "A high-performance Rust implementation of OpenAI's tiktoken library"
+license = "MIT"
+repository = "https://github.com/imumesh18/tiktoken_rust"
+homepage = "https://github.com/imumesh18/tiktoken_rust"
+documentation = "https://docs.rs/tiktoken_rust"
+readme = "README.md"
+keywords = ["tokenizer", "bpe", "openai", "gpt", "nlp"]
+categories = ["text-processing", "algorithms"]
+rust-version = "1.75.0"
+exclude = [
+    ".github/",
+    "scripts/",
+    "target/",
+]
+
+[lib]
+name = "tiktoken_rust"
+crate-type = ["lib"]
+
+[dependencies]
+# Core dependencies - using only widely-adopted, well-maintained crates
+regex = "1.10"
+serde = { version = "1.0", features = ["derive"], optional = true }
+# For downloading vocabulary files
+reqwest = { version = "0.11", features = ["blocking"], optional = true }
+# For base64 decoding of tiktoken files
+base64 = "0.21"
+# For hash verification
+sha2 = { version = "0.10", optional = true }
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+tokio-test = "0.4"
+# For memory profiling
+peak_alloc = "0.2"
+
+[[bench]]
+name = "encoding_benchmark"
+harness = false
+
+[features]
+default = ["download"]
+# Optional features for additional functionality
+serde_support = ["serde"]
+# Enable downloading vocabulary files at runtime
+download = ["reqwest", "sha2"]

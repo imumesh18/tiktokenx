@@ -51,14 +51,14 @@ let token_count = enc.encode("Hello, world!", &[], &[]).unwrap().len();
 
 Benchmarks on Apple M1 Pro comparing tiktoken_rust vs Python tiktoken:
 
-| Implementation  | Operation         | Time     | Throughput | vs Python |
-| --------------- | ----------------- | -------- | ---------- | --------- |
-| Python tiktoken | Encode short text | 5.5 μs   | 5.0 MiB/s  | 1.0x      |
-| tiktoken_rust   | Encode short text | 4.1 μs   | 6.7 MiB/s  | **1.3x**  |
-| Python tiktoken | Encode long text  | 472.8 μs | 9.1 MiB/s  | 1.0x      |
-| tiktoken_rust   | Encode long text  | 175.4 μs | 24.5 MiB/s | **2.7x**  |
+| Implementation  | Operation         | Time     | Throughput | Memory | vs Python |
+| --------------- | ----------------- | -------- | ---------- | ------ | --------- |
+| Python tiktoken | Encode short text | 5.7 μs | 4.8 MiB/s | 0.1 MB | 1.0x |
+| tiktoken_rust   | Encode short text | 4.1 μs | 6.7 MiB/s | 0.5 MB | **1.4x** |
+| Python tiktoken | Encode long text | 482.1 μs | 8.9 MiB/s | 0.1 MB | 1.0x |
+| tiktoken_rust   | Encode long text | 175.4 μs | 24.5 MiB/s | 2.0 MB | **2.7x** |
 
-**tiktoken_rust is 2.0x faster at encoding on average!**
+**tiktoken_rust is 2.1x faster and uses 0.1x less memory on average!**
 
 ## Development
 

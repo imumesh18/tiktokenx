@@ -1,0 +1,50 @@
+# Rustfmt configuration for tiktoken_rust
+
+# Edition to use for formatting
+edition = "2021"
+
+# Maximum width of each line
+max_width = 100
+
+# Maximum width of the args of a function call before falling back to vertical formatting
+fn_call_width = 80
+
+# Maximum width of the args of a function-like attributes before falling back to vertical formatting
+attr_fn_like_width = 80
+
+# Maximum width in a struct literal before falling back to vertical formatting
+struct_lit_width = 80
+
+# Maximum width in a struct variant before falling back to vertical formatting
+struct_variant_width = 80
+
+# Maximum width of an array literal before falling back to vertical formatting
+array_width = 80
+
+# Maximum width of a chain to fit on a single line
+chain_width = 80
+
+# Maximum width of a single line if-else expression
+single_line_if_else_max_width = 80
+
+# How to indent
+hard_tabs = false
+tab_spaces = 4
+
+# Newline style
+newline_style = "Unix"
+
+# Use field init shorthand if possible
+use_field_init_shorthand = true
+
+# Use try shorthand
+use_try_shorthand = true
+
+# Reorder imports
+reorder_imports = true
+
+# Reorder modules
+reorder_modules = true
+
+# Remove nested parens
+remove_nested_parens = true
