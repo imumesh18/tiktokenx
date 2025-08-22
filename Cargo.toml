@@ -29,7 +29,7 @@ serde = { version = "1.0", features = ["derive"], optional = true }
 # For downloading vocabulary files
 reqwest = { version = "0.11", features = ["blocking"], optional = true }
 # For base64 decoding of tiktoken files
-base64 = "0.21"
+base64 = "0.22"
 # For hash verification
 sha2 = { version = "0.10", optional = true }
 
