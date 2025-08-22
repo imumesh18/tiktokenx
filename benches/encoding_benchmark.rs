@@ -1,7 +1,7 @@
 use criterion::{BenchmarkId, Criterion, Throughput, criterion_group, criterion_main};
 use peak_alloc::PeakAlloc;
 use std::hint::black_box;
-use tiktoken_rust::{encoding_for_model, get_encoding};
+use tiktokenx::{encoding_for_model, get_encoding};
 
 #[global_allocator]
 static PEAK_ALLOC: PeakAlloc = PeakAlloc;
@@ -110,7 +110,7 @@ fn bench_batch_operations(c: &mut Criterion) {
         "This is a test.",
         "Rust is awesome!",
         "Benchmarking performance.",
-        "tiktoken_rust is fast!",
+        "tiktokenx is fast!",
     ];
     let texts_100: Vec<&str> = (0..100).map(|i| texts[i % texts.len()]).collect();
 

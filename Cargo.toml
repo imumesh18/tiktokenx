@@ -1,13 +1,13 @@
 [package]
-name = "tiktoken_rust"
-version = "0.0.0"
+name = "tiktokenx"
+version = "0.1.0"
 edition = "2024"
 authors = ["Umesh Yadav <git@umesh.dev>"]
 description = "A high-performance Rust implementation of OpenAI's tiktoken library"
 license = "MIT"
-repository = "https://github.com/imumesh18/tiktoken_rust"
-homepage = "https://github.com/imumesh18/tiktoken_rust"
-documentation = "https://docs.rs/tiktoken_rust"
+repository = "https://github.com/imumesh18/tiktokenx"
+homepage = "https://github.com/imumesh18/tiktokenx"
+documentation = "https://docs.rs/tiktokenx"
 readme = "README.md"
 keywords = ["tokenizer", "bpe", "openai", "gpt", "nlp"]
 categories = ["text-processing", "algorithms"]
@@ -19,7 +19,7 @@ exclude = [
 ]
 
 [lib]
-name = "tiktoken_rust"
+name = "tiktokenx"
 crate-type = ["lib"]
 
 [dependencies]

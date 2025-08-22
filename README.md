@@ -1,8 +1,8 @@
-# tiktoken_rust
+# tiktokenx
 
-[![Crates.io](https://img.shields.io/crates/v/tiktoken_rust.svg)](https://crates.io/crates/tiktoken_rust)
-[![Documentation](https://docs.rs/tiktoken_rust/badge.svg)](https://docs.rs/tiktoken_rust)
-[![Build Status](https://github.com/imumesh18/tiktoken_rust/workflows/CI/badge.svg)](https://github.com/imumesh18/tiktoken_rust/actions)
+[![Crates.io](https://img.shields.io/crates/v/tiktokenx.svg)](https://crates.io/crates/tiktokenx)
+[![Documentation](https://docs.rs/tiktokenx/badge.svg)](https://docs.rs/tiktokenx)
+[![Build Status](https://github.com/imumesh18/tiktokenx/workflows/CI/badge.svg)](https://github.com/imumesh18/tiktokenx/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Fast Rust implementation of OpenAI's tiktoken tokenizer.
@@ -19,13 +19,13 @@ Fast Rust implementation of OpenAI's tiktoken tokenizer.
 
 ```toml
 [dependencies]
-tiktoken_rust = "0.1"
+tiktokenx = "0.1"
 ```
 
 ## Usage
 
 ```rust
-use tiktoken_rust::{get_encoding, encoding_for_model};
+use tiktokenx::{get_encoding, encoding_for_model};
 
 // Get encoding by name
 let enc = get_encoding("cl100k_base").unwrap();
@@ -49,16 +49,16 @@ let token_count = enc.encode("Hello, world!", &[], &[]).unwrap().len();
 
 ## Performance
 
-Benchmarks on Apple M1 Pro comparing tiktoken_rust vs Python tiktoken:
+Benchmarks on Apple M1 Pro comparing tiktokenx vs Python tiktoken:
 
 | Implementation  | Operation         | Time     | Throughput | Memory | vs Python |
 | --------------- | ----------------- | -------- | ---------- | ------ | --------- |
-| Python tiktoken | Encode short text | 5.7 μs | 4.8 MiB/s | 0.1 MB | 1.0x |
-| tiktoken_rust   | Encode short text | 4.1 μs | 6.7 MiB/s | 0.5 MB | **1.4x** |
-| Python tiktoken | Encode long text | 482.1 μs | 8.9 MiB/s | 0.1 MB | 1.0x |
-| tiktoken_rust   | Encode long text | 175.4 μs | 24.5 MiB/s | 2.0 MB | **2.7x** |
+| Python tiktoken | Encode short text | 5.7 μs   | 4.8 MiB/s  | 0.1 MB | 1.0x      |
+| tiktokenx       | Encode short text | 4.1 μs   | 6.7 MiB/s  | 0.5 MB | **1.4x**  |
+| Python tiktoken | Encode long text  | 482.1 μs | 8.9 MiB/s  | 0.1 MB | 1.0x      |
+| tiktokenx       | Encode long text  | 175.4 μs | 24.5 MiB/s | 2.0 MB | **2.7x**  |
 
-**tiktoken_rust is 2.1x faster and uses 0.1x less memory on average!**
+**tiktokenx is 2.1x faster and uses 0.1x less memory on average!**
 
 ## Development
 

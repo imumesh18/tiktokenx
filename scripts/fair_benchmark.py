@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fair apple-to-apple comparison between Python tiktoken and tiktoken_rust.
+Fair apple-to-apple comparison between Python tiktoken and tiktokenx.
 Measures CPU time and memory usage with identical parameters.
 """
 
@@ -155,9 +155,7 @@ def generate_readme_table(results):
     table = []
     table.append("## Performance")
     table.append("")
-    table.append(
-        "Benchmarks on Apple M1 Pro comparing tiktoken_rust vs Python tiktoken:"
-    )
+    table.append("Benchmarks on Apple M1 Pro comparing tiktokenx vs Python tiktoken:")
     table.append("")
     table.append(
         "| Implementation  | Operation         | Time     | Throughput | Memory | vs Python |"
@@ -191,7 +189,7 @@ def generate_readme_table(results):
             f"| Python tiktoken | Encode {name_short} text | {py_encode_str} | {py_encode_throughput} | {py_memory} | 1.0x |"
         )
         table.append(
-            f"| tiktoken_rust   | Encode {name_short} text | {rs_encode_str} | {rs_encode_throughput} | {rs_memory} | **{speedup:.1f}x** |"
+            f"| tiktokenx       | Encode {name_short} text | {rs_encode_str} | {rs_encode_throughput} | {rs_memory} | **{speedup:.1f}x** |"
         )
 
     # Add summary
@@ -204,7 +202,7 @@ def generate_readme_table(results):
 
     table.append("")
     table.append(
-        f"**tiktoken_rust is {avg_speedup:.1f}x faster and uses {avg_memory_ratio:.1f}x less memory on average!**"
+        f"**tiktokenx is {avg_speedup:.1f}x faster and uses {avg_memory_ratio:.1f}x less memory on average!**"
     )
 
     return "\n".join(table)
@@ -244,7 +242,7 @@ def update_readme(new_performance_section):
 
 
 def main():
-    print("🚀 Fair tiktoken_rust vs Python tiktoken Benchmark")
+    print("🚀 Fair tiktokenx vs Python tiktoken Benchmark")
     print("=" * 60)
     print(f"Parameters: {ITERATIONS} iterations, {WARMUP_ITERATIONS} warmup")
     print(f"Encoding: {ENCODING}")
@@ -277,7 +275,7 @@ def main():
         print(f"  Tokens: {py_result['token_count']}")
 
         # Rust benchmark (using known values)
-        print("🦀 tiktoken_rust (known benchmarks):")
+        print("🦀 tiktokenx (known benchmarks):")
         rs_result = benchmark_rust_tiktoken_simple(
             text, ENCODING, ITERATIONS, WARMUP_ITERATIONS
         )
@@ -300,7 +298,7 @@ def main():
         encode_speedup = py_result["encode_mean"] / rs_result["encode_mean"]
         memory_improvement = py_result["memory_used"] / rs_result["memory_used"]
 
-        print("\n⚡ tiktoken_rust improvements:")
+        print("\n⚡ tiktokenx improvements:")
         print(f"  Encoding: {encode_speedup:.1f}x faster")
         print(f"  Memory: {memory_improvement:.1f}x less usage")
 

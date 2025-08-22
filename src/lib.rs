@@ -15,7 +15,7 @@
 //! ## Quick Start
 //!
 //! ```rust
-//! use tiktoken_rust::{get_encoding, encoding_for_model};
+//! use tiktokenx::{get_encoding, encoding_for_model};
 //!
 //! // Get encoding by name
 //! let enc = get_encoding("cl100k_base").unwrap();
