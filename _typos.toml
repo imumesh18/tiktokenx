@@ -1,0 +1,42 @@
+[default]
+# Extend the default configuration
+extend-ignore-identifiers-re = [
+    # Allow tiktoken-specific terms
+    "tiktoken",
+    "gpt",
+    "openai",
+    "bpe",
+    # Allow common variable names
+    "mut",
+    "impl",
+    "struct",
+    "enum",
+    "fn",
+    "const",
+    "static",
+    "async",
+    "await",
+    # Allow hex values
+    "[0-9a-fA-F]{8,}",
+]
+
+[default.extend-words]
+# Add project-specific words that should not be flagged as typos
+tiktoken = "tiktoken"
+openai = "openai"
+gpt = "gpt"
+bpe = "bpe"
+mergeable = "mergeable"
+detokenization = "detokenization"
+tokenization = "tokenization"
+endoftext = "endoftext"
+endofprompt = "endofprompt"
+
+[files]
+extend-exclude = [
+    "target/",
+    "*.lock",
+    "*.toml",
+    "*.json",
+    "*.md",
+]
