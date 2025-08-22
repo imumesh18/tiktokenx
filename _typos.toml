@@ -31,6 +31,8 @@ detokenization = "detokenization"
 tokenization = "tokenization"
 endoftext = "endoftext"
 endofprompt = "endofprompt"
+# BPE tokens that are legitimate but might be flagged as typos
+nd = "nd"
 
 [files]
 extend-exclude = [

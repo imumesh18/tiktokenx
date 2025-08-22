@@ -1,5 +1,6 @@
-use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
+use criterion::{BenchmarkId, Criterion, Throughput, criterion_group, criterion_main};
 use peak_alloc::PeakAlloc;
+use std::hint::black_box;
 use tiktoken_rust::{encoding_for_model, get_encoding};
 
 #[global_allocator]
@@ -223,9 +224,11 @@ fn bench_memory_usage(c: &mut Criterion) {
     let mut group = c.benchmark_group("memory_usage");
 
     let long_text = "Long text ".repeat(100);
-    let texts = ["Short text",
+    let texts = [
+        "Short text",
         "This is a medium length text that should use more memory for tokenization and processing.",
-        &long_text];
+        &long_text,
+    ];
 
     for (i, text) in texts.iter().enumerate() {
         group.bench_with_input(BenchmarkId::new("encode_with_memory", i), text, |b, text| {

@@ -220,9 +220,11 @@ mod tests {
 
         let encodings = list_all_supported_encodings();
         assert!(!encodings.is_empty());
-        assert!(encodings
-            .iter()
-            .any(|(vendor, encoding)| vendor == "openai" && encoding == "cl100k_base"));
+        assert!(
+            encodings
+                .iter()
+                .any(|(vendor, encoding)| vendor == "openai" && encoding == "cl100k_base")
+        );
     }
 
     #[test]
