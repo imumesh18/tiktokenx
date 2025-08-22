@@ -19,7 +19,7 @@ type-complexity-threshold = 200
 avoid-breaking-exported-api = false
 
 # Enable additional lints
-msrv = "1.75.0"
+msrv = "1.85.0"
 
 # Additional modern clippy configurations
 allow-expect-in-tests = true

@@ -105,14 +105,10 @@ jobs:
     name: Typos
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-
-      - name: Install typos
-        run: |
-          curl -LsSf https://github.com/crate-ci/typos/releases/latest/download/typos-x86_64-unknown-linux-musl.tar.gz | tar xzf - -C /usr/local/bin
-
-      - name: Run typos check
-        run: typos
+      - name: Checkout Actions Repository
+        uses: actions/checkout@v4
+      - name: Spell Check Repo
+        uses: crate-ci/typos@v1.35.5
 
   doc:
     name: Documentation
@@ -240,7 +236,7 @@ jobs:
 
       - name: Install Rust MSRV toolchain
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.75.0
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.85.0
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
           source $HOME/.cargo/env
 
@@ -251,9 +247,9 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
-          key: ${{ runner.os }}-cargo-1.75.0-${{ hashFiles('**/Cargo.lock') }}
+          key: ${{ runner.os }}-cargo-1.85.0-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cargo-1.75.0-
+            ${{ runner.os }}-cargo-1.85.0-
             ${{ runner.os }}-cargo-
 
       - name: Check MSRV

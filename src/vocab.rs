@@ -281,8 +281,8 @@ mod tests {
         assert!(vocab.contains_key(&vec![b' ']));
 
         // Should contain some common pairs
-        assert!(vocab.contains_key(&b" the".to_vec()));
-        assert!(vocab.contains_key(&b"th".to_vec()));
+        assert!(vocab.contains_key(b" the".as_slice()));
+        assert!(vocab.contains_key(b"th".as_slice()));
     }
 
     #[test]
@@ -291,8 +291,8 @@ mod tests {
         let vocab = parse_tiktoken_bpe(content).unwrap();
 
         assert_eq!(vocab.len(), 2);
-        assert_eq!(vocab.get(&b"hello".to_vec()), Some(&0));
-        assert_eq!(vocab.get(&b"world".to_vec()), Some(&1));
+        assert_eq!(vocab.get(b"hello".as_slice()), Some(&0));
+        assert_eq!(vocab.get(b"world".as_slice()), Some(&1));
     }
 
     #[test]

@@ -1,7 +1,7 @@
 [package]
 name = "tiktoken_rust"
 version = "0.0.0"
-edition = "2021"
+edition = "2024"
 authors = ["Umesh Yadav <git@umesh.dev>"]
 description = "A high-performance Rust implementation of OpenAI's tiktoken library"
 license = "MIT"
@@ -11,7 +11,7 @@ documentation = "https://docs.rs/tiktoken_rust"
 readme = "README.md"
 keywords = ["tokenizer", "bpe", "openai", "gpt", "nlp"]
 categories = ["text-processing", "algorithms"]
-rust-version = "1.75.0"
+rust-version = "1.85.0"
 exclude = [
     ".github/",
     "scripts/",

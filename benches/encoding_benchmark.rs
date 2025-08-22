@@ -223,11 +223,9 @@ fn bench_memory_usage(c: &mut Criterion) {
     let mut group = c.benchmark_group("memory_usage");
 
     let long_text = "Long text ".repeat(100);
-    let texts = vec![
-        "Short text",
+    let texts = ["Short text",
         "This is a medium length text that should use more memory for tokenization and processing.",
-        &long_text,
-    ];
+        &long_text];
 
     for (i, text) in texts.iter().enumerate() {
         group.bench_with_input(BenchmarkId::new("encode_with_memory", i), text, |b, text| {
@@ -246,7 +244,7 @@ fn bench_memory_usage(c: &mut Criterion) {
 
                 // Get peak memory usage
                 let peak_memory = PEAK_ALLOC.peak_usage_as_mb();
-                println!("Peak memory usage for text {}: {:.2} MB", i, peak_memory);
+                println!("Peak memory usage for text {i}: {peak_memory:.2} MB");
 
                 duration
             })
@@ -311,7 +309,7 @@ fn bench_memory_efficiency(c: &mut Criterion) {
             let duration = start.elapsed();
 
             let peak_memory = PEAK_ALLOC.peak_usage_as_mb();
-            println!("Peak memory for encoding creation: {:.2} MB", peak_memory);
+            println!("Peak memory for encoding creation: {peak_memory:.2} MB");
 
             duration
         })
@@ -332,7 +330,7 @@ fn bench_memory_efficiency(c: &mut Criterion) {
             let duration = start.elapsed();
 
             let peak_memory = PEAK_ALLOC.peak_usage_as_mb();
-            println!("Peak memory for batch operations: {:.2} MB", peak_memory);
+            println!("Peak memory for batch operations: {peak_memory:.2} MB");
 
             duration
         })

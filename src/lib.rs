@@ -124,7 +124,7 @@ mod tests {
             let text = "Hello, world! This is a test.";
             let tokens = enc.encode(text, &[], &[]).unwrap();
             let decoded = enc.decode(&tokens).unwrap();
-            assert_eq!(decoded, text, "Failed for encoding: {}", encoding_name);
+            assert_eq!(decoded, text, "Failed for encoding: {encoding_name}");
         }
     }
 
