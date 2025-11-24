@@ -25,7 +25,7 @@ jobs:
           - beta
           - nightly
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust toolchain
         run: |
@@ -61,7 +61,7 @@ jobs:
     name: Clippy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust toolchain
         run: |
@@ -89,7 +89,7 @@ jobs:
     name: Rustfmt
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust toolchain
         run: |
@@ -106,7 +106,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Actions Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Spell Check Repo
         uses: crate-ci/typos@v1.38.1
 
@@ -114,7 +114,7 @@ jobs:
     name: Documentation
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust toolchain
         run: |
@@ -143,7 +143,7 @@ jobs:
     name: Coverage
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust toolchain
         run: |
@@ -181,7 +181,7 @@ jobs:
     name: Benchmark
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust toolchain
         run: |
@@ -214,7 +214,7 @@ jobs:
     name: Security Audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust toolchain
         run: |
@@ -232,7 +232,7 @@ jobs:
     name: MSRV
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install Rust MSRV toolchain
         run: |
