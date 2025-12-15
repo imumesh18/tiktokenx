@@ -244,7 +244,7 @@ jobs:
           echo '<meta http-equiv="refresh" content="0; url=docs/latest/tiktoken_rs/">' > ../index.html
 
       - name: Upload documentation artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: github-pages
           path: gh-pages/
