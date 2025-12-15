@@ -35,7 +35,7 @@ jobs:
           rustup component add rustfmt clippy
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -71,7 +71,7 @@ jobs:
           rustup component add clippy
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -123,7 +123,7 @@ jobs:
           source $HOME/.cargo/env
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -153,7 +153,7 @@ jobs:
           rustup component add llvm-tools-preview
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -190,7 +190,7 @@ jobs:
           source $HOME/.cargo/env
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
@@ -241,7 +241,7 @@ jobs:
           source $HOME/.cargo/env
 
       - name: Cache dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.cargo/registry
