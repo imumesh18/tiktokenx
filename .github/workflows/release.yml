@@ -72,6 +72,10 @@ jobs:
     name: Publish to crates.io
     runs-on: ubuntu-latest
     needs: create-release
+    permissions:
+      contents: read
+      # crates.io trusted publishing (OIDC)
+      id-token: write
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
@@ -108,8 +112,14 @@ jobs:
       - name: Check documentation
         run: cargo doc --no-deps --all-features
 
+      - name: Authenticate with crates.io
+        id: auth
+        uses: rust-lang/crates-io-auth-action@3268eb413133e2960fa4ae0e963ca76380c54cd9 # v1.0.6
+
       - name: Publish to crates.io
-        run: cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
+        run: cargo publish
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
 
   build-binaries:
     name: Build release binaries
